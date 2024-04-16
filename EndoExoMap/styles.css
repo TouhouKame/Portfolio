@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+  background-color: rgb(62, 62, 255);
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+
+.right-float {
+  position: fixed;
+  top: 20%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.left {
+  left: 50%;
+}
+
+.description {
+  background-color: aliceblue;
+  border-radius: 0.5rem;
+  color: black;
+  padding: 13px;
+  width: 300px;
+}
+
+#map-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+.country {
+  cursor: pointer;
+}
+
+area {
+  background-color: rgb(30, 233, 30);
+}
+
+#endonyms,
+h2 h3 p {
+  margin-bottom: 10px;
+}
+
+area:hover {
+  background-color: greenyellow;
+  z-index: 9;
+}
