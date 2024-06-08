@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <title>Full Foods Restaurant</title>
+  </head>
+  <style>
+    body {
+      background-image: url(https://cdn1.citylife.group/wp-content/uploads/2017/08/babiraq1.jpg);
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="welcomediv">
+        <h1>Full Foods Restaurant</h1>
+        <h2>Where ingredients get delicious</h2>
+      </div>
+      <div id="navbox">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <section>
+      <h1 class="center" id="menu-header">Peruse our menu's selection</h1>
+      <div id="selection-bar">
+        <button id="breakfast-button">Breakfast</button>
+        <button id="lunch-button">Lunch</button>
+        <button id="dinner-button">Dinner</button>
+      </div>
+      <div id="menu"></div>
+    </section>
+    <div id="bottomdiv">
+      <a href="https://twitter.com/McDonalds"
+        ><img
+          class="icon"
+          src="https://styles.redditmedia.com/t5_7734mg/styles/communityIcon_y5vb3yzb0sfb1.png"
+          alt="X icon"
+      /></a>
+      <a href="https://www.facebook.com/McDonalds/"
+        ><img
+          class="icon"
+          src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png"
+          alt="Facebook icon"
+      /></a>
+      <a href="https://www.instagram.com/mcdonalds/"
+        ><img
+          class="icon"
+          src="https://static.vecteezy.com/system/resources/previews/023/741/148/non_2x/instagram-logo-icon-social-media-icon-free-png.png"
+          alt="Instagram icon"
+      /></a>
+    </div>
+    <script>
+      'use strict';
+
+      const breakfastButton = document.getElementById('breakfast-button');
+      const lunchButton = document.getElementById('lunch-button');
+      const dinnerButton = document.getElementById('dinner-button');
+
+      //Menu section, breakfast, lunch & dinner menus
+      const breakfastList = [
+        {
+          name: 'RAW EGGS',
+          description: '5 raw eggs in a glass or bowl of your choice',
+          price: 15,
+        },
+        {
+          name: 'BUTTER',
+          description: 'A large chunk of butter',
+          price: 10,
+        },
+        {
+          name: 'PILE OF FLOUR',
+          description: '100 grams of flour with some water to wash it down',
+          price: 12,
+        },
+        {
+          name: 'MILK',
+          description: 'Milk in a bowl.',
+          price: 9,
+        },
+        {
+          name: 'BACON',
+          description: 'Uncooked bacon. Just as nature intended.',
+          price: 20,
+        },
+      ];
+
+      const lunchList = [
+        {
+          name: 'GREENS',
+          description: 'A large pile of greens and lettuce',
+          price: 18,
+        },
+        {
+          name: 'STEAK TARTARE',
+          description:
+            'Traditional steak tartare with a minimalist twist. (ground beef only)',
+          price: 25,
+        },
+        {
+          name: 'CAN OF TOMATOES',
+          description: 'A huge can of tomatoes (can opener + 5)',
+          price: 12,
+        },
+        {
+          name: 'FRENCH FRIES',
+          description:
+            'Russet potato fries straight from the freezer to your plate',
+          price: 14,
+        },
+        {
+          name: 'TURKEY BREAST',
+          description: 'Chewy',
+          price: 19,
+        },
+      ];
+
+      const dinnerList = [
+        {
+          name: 'CHICKEN SPECIAL',
+          description: "Don't order if you're squeamish",
+          price: 89,
+        },
+        {
+          name: 'STRAIGHT SPAGHETTI',
+          description: 'Dry wheat semolina noodles',
+          price: 18,
+        },
+        {
+          name: 'REAL RISOTTO',
+          description: 'Crunchy, add some cream + 10',
+          price: 15,
+        },
+        {
+          name: 'THE LIVER KING',
+          description: 'Beef liver, as liver king intended',
+          price: 90,
+        },
+      ];
+      //function to make menus change
+      const initializeMenu = function (menuList) {
+        const menu = document.getElementById('menu');
+
+        menu.innerHTML = '';
+
+        for (let i = 0; i < menuList.length; i++) {
+          const menuSection = document.createElement('div');
+          menuSection.classList.add('menu-section');
+
+          const menuTitle = document.createElement('h2');
+          menuTitle.classList.add('item-name');
+          menuTitle.textContent = menuList[i].name;
+          menuSection.appendChild(menuTitle);
+
+          const price = document.createElement('p');
+          price.classList.add('item-price');
+          price.textContent = 'Cost: $' + menuList[i].price;
+          menuSection.appendChild(price);
+
+          const description = document.createElement('p');
+          description.classList.add('item-description');
+          description.textContent = menuList[i].description;
+          menuSection.appendChild(description);
+
+          menu.appendChild(menuSection);
+        }
+      };
+
+      breakfastButton?.addEventListener('click', function () {
+        initializeMenu(breakfastList);
+      });
+      lunchButton?.addEventListener('click', function () {
+        initializeMenu(lunchList);
+      });
+      dinnerButton?.addEventListener('click', function () {
+        initializeMenu(dinnerList);
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+        initializeMenu(breakfastList);
+      });
+    </script>
+  </body>
+</html>

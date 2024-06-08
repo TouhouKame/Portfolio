@@ -1,0 +1,256 @@
+:root {
+  --burgundy: #6f0707;
+  --light-red: #ef0b0b;
+  --mustard: #d4af37;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  scroll-snap-type: y;
+}
+
+body {
+  color: black;
+  background-size: cover;
+  background-position: center;
+  font-family: "Arial", Helvetica, sans-serif;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+h2 {
+  font-size: 25px;
+  padding: 5px;
+}
+#welcomediv {
+  float: left;
+  background-color: var(--mustard);
+  font-family: "Lobster", cursive;
+  padding: 9px;
+  opacity: 0.95;
+  border-radius: 5px 5px 5px 5px;
+  margin-left: 30px;
+  margin-right: 50px;
+}
+
+#home #container .infoblock {
+  box-sizing: border-box;
+}
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background: linear-gradient(20deg, var(--burgundy), var(--light-red));
+  height: auto;
+  width: 100%;
+  padding: 10px 20px 20px 10px;
+  margin: -10px -10px;
+  text-shadow: 5px 5px 10px rgba(255, 246, 246, 0.3);
+}
+
+#navbox {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 100px;
+  margin-right: 80px;
+}
+nav {
+  float: right;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 10px;
+}
+li:last-of-type {
+  margin-right: 0;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+a:hover,
+button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#rightdiv {
+  float: right;
+}
+.infoblock:last-of-type {
+  margin-bottom: 100px;
+}
+.infoblock {
+  margin-top: 200px;
+  background-color: var(--mustard);
+  /*border-radius: 10px 10px 10px 10px;*/
+  padding: 15px;
+  width: 60vw;
+  opacity: 0.9;
+  font-size: 20px;
+  display: inline-block;
+}
+
+#menu-header {
+  text-shadow: 8px 9px 10px rgb(255, 255, 255);
+  background-color: var(--mustard);
+  padding: 50px;
+  border: 5px double black;
+}
+
+#selection-bar {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(70deg, var(--light-red), var(--burgundy));
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin-left: -10px;
+}
+
+button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  background: linear-gradient(70deg, var(--light-red), var(--burgundy));
+  width: 90px;
+}
+
+#menu {
+  background-color: var(--mustard);
+  float: right;
+  width: 500px;
+  height: 800px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bottomdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 10px;
+  height: 120px;
+  width: 100%;
+  margin-bottom: -10px;
+  margin-left: -10px;
+}
+
+#menu {
+  display: absolute;
+  padding-left: 10px;
+  display: grid;
+  place-items: center;
+  border: 5px double black;
+}
+
+.menu-section {
+  text-align: center;
+}
+
+#emptyspace {
+  height: 700px;
+}
+
+#small-emptyspace {
+  height: 200px;
+}
+
+#locations-div {
+  width: max-content;
+  height: auto;
+  background-color: var(--mustard);
+  opacity: 0.95;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+}
+
+#locations-anchor {
+  text-shadow: 1px 1px 0 white, 1px 1px 0 white, 1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+#location-description-box {
+  width: max-content;
+  height: auto;
+}
+
+#locbox {
+  background-color: white;
+  height: 200px;
+  width: max-content;
+}
+
+#location-description-box {
+  text-align: center;
+  width: 75vw;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.place-description {
+  word-wrap: break-word;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-template-rows: 2;
+  grid-template-columns: 2;
+  gap: 70px;
+  background-color: whitesmoke;
+  padding: 20px;
+}
+
+.grid {
+  width: 230px;
+  height: 230px;
+  border: 3px solid black;
+  padding: 10px;
+}
+
+#grid1 {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+#grid2 {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+#grid3 {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+#grid4 {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.small-text {
+  font-size: 9px;
+}

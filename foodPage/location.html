@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <title>Full Foods Restaurant</title>
+  </head>
+  <style>
+    body {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_in_London.jpg);
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.5s ease-in-out;
+      margin: 0;
+    }
+    #locations-anchor {
+      text-shadow: 1px 1px 0 white, 1px 1px 0 white, 1px 1px 0 white,
+        1px 1px 0 white;
+    }
+
+    #location-description-box {
+      width: 600px;
+      height: auto;
+    }
+
+    #locbox {
+      background-color: var(--mustard);
+      height: 200px;
+      width: 100%;
+      border-top: 3px solid black;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="welcomediv">
+        <h1>Full Foods Restaurant</h1>
+        <h2>Where ingredients get delicious</h2>
+      </div>
+      <div id="navbox">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <section>
+      <div id="emptyspace"></div>
+      <div id="locations-div">
+        <h2 class="locations-anchor"><a id="new-york">New York</a></h2>
+        <h2 class="locations-anchor"><a id="london">London</a></h2>
+        <h2 class="locations-anchor"><a id="paris">Paris</a></h2>
+        <h2 class="locations-anchor"><a id="beijing">Beijing</a></h2>
+      </div>
+      <!--<input id="location-input"placeholder="Where do you live?">-->
+      <div id="locbox"></div>
+    </section>
+    <div id="bottomdiv">
+      <a href="https://twitter.com/McDonalds"
+        ><img
+          class="icon"
+          src="https://styles.redditmedia.com/t5_7734mg/styles/communityIcon_y5vb3yzb0sfb1.png"
+          alt="X icon"
+      /></a>
+      <a href="https://www.facebook.com/McDonalds/"
+        ><img
+          class="icon"
+          src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png"
+          alt="Facebook icon"
+      /></a>
+      <a href="https://www.instagram.com/mcdonalds/"
+        ><img
+          class="icon"
+          src="https://static.vecteezy.com/system/resources/previews/023/741/148/non_2x/instagram-logo-icon-social-media-icon-free-png.png"
+          alt="Instagram icon"
+      /></a>
+    </div>
+    <script>
+      const locationBackgrounds = [
+        'url(https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_in_London.jpg)',
+        'url(https://blog.weekendinitaly.com/wp-content/uploads/2016/12/McDonalds-Rome.jpg)',
+        'url(https://www.foodbusinessafrica.com/wp-content/uploads/2020/12/burger-king-1536x864.jpg)',
+        'url(https://upload.wikimedia.org/wikipedia/commons/4/49/Burger_King_Beijing.jpg)',
+      ];
+
+      const locationTextArray = [
+        {
+          name: 'Central Park, New York',
+          description:
+            "Visit your favourite restaurant, Real Foods Restaurant™️, in the heart of the American east coast. Our location in central park's ancient tunnels makes for a unique experience!",
+        },
+        {
+          name: 'Trafalgar Square, London',
+          description:
+            'Visit your favourite restaurant, Real Foods Restaurant™️, in the heart of the London. Our raw bread pudding is absolutely scumptious!',
+        },
+        {
+          name: 'Champs-Élysées, Paris',
+          description:
+            'Venez chez votre restaurant favoris, Real Foods Restaurant™️, la location du ville de Paris. Notre menu est beaucoup plus sophistique que lors des Anglais!',
+        },
+        {
+          name: 'Forbidden City, Beijing',
+          description:
+            '访问您最喜欢的餐厅，Real Foods Restaurant™️，位于中华人民共和国的中心地带。 请在皇城内以最崇高的敬意用餐。',
+        },
+      ];
+      //function to change background image and texts
+      function changeLocationImage(imageUrl, name, description) {
+        document.body.style.backgroundImage = imageUrl;
+        const locBox = document.getElementById('locbox');
+        locBox.innerHTML = '';
+
+        const locationDescriptionContainer = document.createElement('div');
+        locationDescriptionContainer.id = 'location-description-box';
+
+        const describeLocationTitle = document.createElement('h2');
+        describeLocationTitle.classList.add('place-name');
+        describeLocationTitle.textContent = name;
+        locationDescriptionContainer.appendChild(describeLocationTitle);
+
+        const describeLocation = document.createElement('p');
+        describeLocation.classList.add('place-description');
+        describeLocation.textContent = description;
+        locationDescriptionContainer.appendChild(describeLocation);
+
+        locBox.appendChild(locationDescriptionContainer);
+      }
+
+      const newYork = document.getElementById('new-york');
+      const london = document.getElementById('london');
+      const paris = document.getElementById('paris');
+      const beijing = document.getElementById('beijing');
+
+      document.addEventListener('DOMContentLoaded', function () {
+        changeLocationImage(
+          locationBackgrounds[0],
+          locationTextArray[0].name,
+          locationTextArray[0].description
+        );
+      });
+
+      newYork?.addEventListener('click', function (event) {
+        event.preventDefault();
+        changeLocationImage(
+          locationBackgrounds[0],
+          locationTextArray[0].name,
+          locationTextArray[0].description
+        );
+      });
+      london?.addEventListener('click', function (event) {
+        event.preventDefault();
+        changeLocationImage(
+          locationBackgrounds[1],
+          locationTextArray[1].name,
+          locationTextArray[1].description
+        );
+      });
+      paris?.addEventListener('click', function (event) {
+        event.preventDefault();
+        changeLocationImage(
+          locationBackgrounds[2],
+          locationTextArray[2].name,
+          locationTextArray[2].description
+        );
+      });
+      beijing.addEventListener('click', function (event) {
+        event.preventDefault();
+        changeLocationImage(
+          locationBackgrounds[3],
+          locationTextArray[3].name,
+          locationTextArray[3].description
+        );
+        console.log('aaaaaaaa');
+      });
+
+      newYork?.addEventListener('click', console.log('new york'));
+    </script>
+  </body>
+</html>
